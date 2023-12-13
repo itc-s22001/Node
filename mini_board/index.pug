@@ -1,0 +1,24 @@
+extends layout.pug
+
+block script
+    script
+        include clientIndex.js
+
+block content
+    p メッセージ最大１０個保管されます
+
+    form(method="post" action="/")
+        p#id
+        input#id_input(type="hidden" name="id")
+
+        .mb-3
+            label.form-label Message
+            input#msg.form-control(type="text" name="msg")
+
+        button.btn.btn-primary(type="submit") 送信
+
+    include  dataItem.pug
+    table.table
+        each item in data
+            +dataItem(item.id, item.msg)
+

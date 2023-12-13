@@ -1,0 +1,13 @@
+extends layout.pug
+
+block script
+    script
+        include clientLogin.js
+
+block content
+    p あなたのログインネームを入力してください
+
+    .mb-3
+        label.form-label(for="id_input") Login name;
+        input#id_input.form-control(type="text")
+    button#send.btn.btn-primary 送信
