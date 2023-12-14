@@ -1,4 +1,9 @@
 const express = require("express");
+
+/**
+ * Expressアプリケーション本体
+ * @type {Express}
+ */
 const app = express();
 
 app.get("/", (req, res) => {
