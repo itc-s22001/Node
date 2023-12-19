@@ -3,11 +3,14 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const session = require("express-session");
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const helloRouter = require("./routes/hello");
 const hello2Router = require("./routes/hello2");
+const hello3Router = require("./routes/hello3");
+const hello4Router = require("./routes/hello4");
 
 const app = express();
 
@@ -20,11 +23,20 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(session({
+  secret: "5xOGD)s/5eddjR0JVNBT!C=>",
+  resave: false,
+  saveUninitialized: false,
+  cookie: {maxAge: 60 * 60 * 1000}
+}));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use("/hello", helloRouter);
 app.use("/hello2/", hello2Router);
+app.use("/hello3/", hello3Router);
+app.use("/hello4/", hello4Router);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

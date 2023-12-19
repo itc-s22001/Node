@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    header
+        h1.display-4= title
+    main
+        ol
+            each item in content
+                li
+                    a(href=item.link[0] target="_blank")= item.title
+            else
+                li ニュースデータが無いか受信に失敗しました
