@@ -1,0 +1,13 @@
+extends layout.pug
+
+block content
+    header
+        h1= title
+
+    main
+        p !{content}
+        form(method="post" action="/hello3/post")
+            .mb-3
+                label.form-label(for="msg") Message:
+                input#msg.form-control(type="text" name="message")
+            button.btn.btn-primary(type="submit") 送信
