@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const mariadb = require("mariadb");
-const e = require("express");
+const {check, validationResult} = require("express-validator");
 
 const pool = mariadb.createPool({
     host: "localhost",
@@ -117,5 +117,48 @@ router.post("/edit", async (req, res, next) => {
         console.log(e);
     }
 });
+
+router.get("/add2", (req,res,next) => {
+    const data = {
+        title: "Hello/Add",
+        content: "新しいコードを入力:",
+        form: {name: "", email: "", age: 0}
+    };
+    res.render("hello2/add2", data)
+});
+
+router.post("/add2", [
+    check("name", "NAME　は必ず入力してください").notEmpty(),
+    check("email", "EMAIL はメールアドレスを記入してください。").isEmail(),
+    check("age", "AGE　は年齢(整数)を入力してください。").isInt()
+], async (req, res, next) => {
+    const errors = validationResult(req);
+
+    if (!errors.isEmpty()) {
+        const messages = errors.array();
+        const data = {
+            title: "Hello2/Add2",
+            content: "新しいコードを入力:",
+            form: req.body,
+            errors: messages,
+        };
+        res.render("hello2/add2", data);
+        return;
+    }
+    // 入力チェックで問題なければ以下の処理へ進める系
+    const {name, email, age} = req.body;
+    try {
+        await pool.query(
+            "INSERT INTO mydata (name, email, age) VALUES (?, ?, ?)",
+            [name, email, age]
+        );
+        res.redirect("/hello2");
+    } catch (e) {
+        res.status(500).send("データベースエラー");
+        console.log(e);
+    }
+});
+
+
 
 module.exports = router;
