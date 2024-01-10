@@ -1,9 +1,17 @@
-var express = require('express');
-var router = express.Router();
+const router =  require("express").Router();
+const {PrismaClient} = require("@prisma/client");
+const prisma = new PrismaClient();
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+router.get("/", async (req, res, next) => {
+  const users = await prisma.user.findMany();
+  const data = {
+    title: "Users/Index",
+    content: users
+  };
+  res.render("users/index", data);
 });
 
 module.exports = router;
+
+
