@@ -47,14 +47,17 @@ router.get("/", async (req, res, next) => {
 });
 
 router.get("/find", async (req, res, next) => {
-  const name = req.query.name;
+  const min = +req.query.min;
+  const max = +req.query.max;
   const users = await prisma.user.findMany({
     where: {
-      name: {
-        contains: name
-      }
+      AND: [
+        {age: {gte: min}},
+        {age: {lte: max}},
+      ]
     }
   });
+  // SELECT * FROM user WHERE age >= min AND age <= max;
   const data = {
     title: "Users/Find",
     content: users
