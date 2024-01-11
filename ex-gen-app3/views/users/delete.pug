@@ -1,0 +1,20 @@
+extends ../layout.pug
+
+block content
+    header
+        h1.display-4= title
+
+    main
+        table.table
+            tr
+                th NAME
+                td= user.name
+            tr
+                th EMAIL
+                td= user.email
+            tr
+                th AGE
+                td= user.age
+        form(method="post" action="/users/delete")
+            input(type="hidden" name="id" value=user.id)
+            button.btn.btn-primary(type="submit") 削除

@@ -98,7 +98,24 @@ router.post("/edit", async (req, res, next) => {
     data: {name, email, password, age: +age}
   });
   res.redirect("/users")
-})
+});
+
+router.get("/delete/:id", async (req, res, next) => {
+  const id = +req.params.id;
+  const user = await prisma.user.findUnique({where: {id}});
+  const data = {
+    title: "Users/Delete",
+    user
+  };
+  res.render("users/delete", data);
+});
+
+router.post("/delete", async (req, res, next) => {
+  await prisma.user.delete({
+    where: {id: +req.body.id}
+  });
+  res.redirect("/users")
+});
 
 
 module.exports = router;
