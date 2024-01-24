@@ -1,0 +1,19 @@
+extends ../layout
+
+block content
+
+    form(method="post" action="/users/signup")
+        .mb-3
+            label.form-label(for="name") ユーザ名
+            input#name.form-control(type="text" name="name" autocomplete="off")
+
+        .mb-3
+            label.form-label(for="pass") パスワード
+            input#pass.form-control(type="password" name="pass")
+
+        button.btn.btn-primary(type="submit") 新規登録
+
+
+        section.text-danger
+            each error in errors
+                p= error.msg

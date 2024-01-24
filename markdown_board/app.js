@@ -1,8 +1,11 @@
 import createError from "http-errors"
 import express from "express";
+import session from "express-session";
 import path from "node:path";
 import cookieParser from "cookie-parser";
 import logger from "morgan";
+import passport from "passport";
+import passportConfig from "./util/auth.js";
 
 import indexRouter from "./routes/index.js";
 import usersRouter from "./routes/users.js";
@@ -18,6 +21,25 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(import.meta.dirname, 'public')));
+
+// Bootstrap bypass
+app.use("/bootstrap", express.static(path.join(
+    import.meta.dirname, "node_modules", "bootstrap", "dist"
+)));
+// axios bypass
+app.use("/axios", express.static(path.join(
+    import.meta.dirname, "node_modules", "axios", "dist"
+)));
+// session
+app.use(session({
+  secret: "4jGPp9u2r1wqg/WQv7Y1SOW++RwqR1BSjrH1Idn8EiBlmjWK",
+  resave: false,
+  saveUninitialized: false,
+  cookie: {maxAge: 60 * 60  * 1000}
+}));
+// passport
+app.use(passport.authenticate("session"));
+app.use(passportConfig(passport));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
