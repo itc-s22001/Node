@@ -1,0 +1,22 @@
+extends ../layout
+
+block content
+
+    form(method="post" action="/users/login")
+        .mb-3
+            label.form-label(for="name") ユーザ名
+            input#name.form-control(type="text" name="name" autocomplete="off")
+
+        .mb-3
+            label.form-label(for="pass") パスワード
+            input#pass.form-control(type="password" name="pass")
+
+        button.btn.btn-primary(type="submit") ログイン
+
+        if hasMessages
+            section.text-danger
+                each message in messages
+                    p= message
+
+        .mt-4
+            a(href="/users/signup") アカウントの作成 >>

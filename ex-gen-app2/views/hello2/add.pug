@@ -1,0 +1,22 @@
+extends ../layout
+
+block content
+    header
+        h1.display-4= title
+
+    main
+        p!= content
+        form(method="post" action="/hello2/add")
+            .mb-3
+                label.form-label(for="name") NAME
+                input#name.form-control(name="name" type="text")
+
+            .mb-3
+                label.form-label(for="email") EMAIL
+                input#email.form-control(name="email" type="text")
+
+            .mb-3
+                label.form-label(for="age") AGE
+                input#age.form-control(name="age" type="number")
+
+            button.btn.btn-primary(type="submit") 作成

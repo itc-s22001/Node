@@ -1,0 +1,23 @@
+extends ../layout
+
+block content
+    header
+        h1.display-4= title
+
+    main
+        p= content
+        table.table
+            tr
+                th ID
+                td= mydata.id
+            tr
+                th NAME
+                td= mydata.name
+
+            tr
+                th EMAIL
+                td= mydata.email
+
+            tr
+                th AGE
+                td= mydata.age
