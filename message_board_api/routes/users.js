@@ -2,6 +2,7 @@ import express from "express";
 import {check, validationResult} from "express-validator";
 import {PrismaClient} from "@prisma/client";
 import {calcHash, generateSalt} from "../util/auth.js";
+import passport from "passport";
 
 
 const router = express.Router();
@@ -17,16 +18,26 @@ router.get("/", (req, res, next) => {
         res.status(400).json({message: "unauthenticated"});
     }
 });
-router.get("/login", (req, res, next) => {
-   const data = {
-       title: "ログイン",
-       name: ""
-   }
-    // const data = {
-    //     title: "Users/login",
-    //     content: "名前とパスワードを入力してください"
-    // };
-    // res.render("users/login", data);
+
+// ログイン
+// router.get("/login", (req, res, next) => {
+//    const data = {
+//        title: "ログイン",
+//    };
+// });
+
+// ログイン処理
+router.post("/login", passport.authenticate("local", {
+    failureRedirect: "/users/error",
+    failureMessage: true,
+    keepSessionInfo: true
+}),(req, res, next) => {
+    // ログインに成功したときだけ実行される
+    return res.status(200).json({message: "ログインOK"});
+});
+router.get("/error", (req, res, next) => {
+    // ログイン失敗専用の経路
+    return res.status(401).json({message: "name and/or password is invalid"});
 });
 
 // ログアウト処理

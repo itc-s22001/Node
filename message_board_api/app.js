@@ -22,20 +22,26 @@ app.use(cookieParser());
 app.use(express.static(path.join(import.meta.dirname, "routes")));
 app.use(cors({credential: true, origin:'http://localhost:3000'}));
 
-
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-
+// session
 app.use(session({
     secret: "WmU7moZxCF19ngUYorPpltEuJXbjz4a0Dy6a0fLhBt3nEtrI",
     resave: false,
     saveUninitialized: false,
     cookie: {maxAge: 60 * 60 * 1000}
 }));
+
 // passport
 app.use(passport.authenticate("session"));
 app.use(passportConfig(passport));
 
+// cors
+app.use(cors({
+    origin: "http://localhost:3000",
+    credential: true
+}));
+
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
 
 
 export  default app;

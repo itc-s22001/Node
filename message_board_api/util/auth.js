@@ -38,7 +38,7 @@ const config = (passport) => {
 
     // データベースに問い合わせてユーザ名:パスワードをチェックして認証する部分
     passport.use(new LocalStrategy({
-        usernameField: "name", passwordField: "pass"
+        usernameField: "name", passwordField: "password"
     }, async (username, password, done) => {
         try {
             const user = await prisma.user.findUnique({
@@ -49,7 +49,7 @@ const config = (passport) => {
                 return done(null, false, {message: "ユーザ名かパスワードが違います1"});
             }
             const hashedPassword = calcHash(password, user.salt);
-            if (!crypto.timingSafeEqual(user.pass, hashedPassword)) {
+            if (!crypto.timingSafeEqual(user.password, hashedPassword)) {
                 // パスワードが違うよの場合
                 return done(null, false, {message: "ユーザ名かパスワードが違います2"});
             }
