@@ -1,20 +1,41 @@
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+import express from "express";
+import path from "path"
+import cookieParser from "cookie-parser";
+import logger from "morgan";
+import cors from "cors";
+import session from "express-session";
+import passport from "passport";
+import passportConfig from "./util/auth.js"
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
 
-var app = express();
+import indexRouter from "./routes/index.js";
+import usersRouter from "./routes/users.js";
+
+
+const app = express();
+
 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(import.meta.dirname, "routes")));
+app.use(cors({credential: true, origin:'http://localhost:3000'}));
+
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
-module.exports = app;
+app.use(session({
+    secret: "WmU7moZxCF19ngUYorPpltEuJXbjz4a0Dy6a0fLhBt3nEtrI",
+    resave: false,
+    saveUninitialized: false,
+    cookie: {maxAge: 60 * 60 * 1000}
+}));
+// passport
+app.use(passport.authenticate("session"));
+app.use(passportConfig(passport));
+
+
+
+export  default app;
