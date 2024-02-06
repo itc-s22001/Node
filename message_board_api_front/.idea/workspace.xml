@@ -4,22 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ee553024-2e93-4f55-ae9e-2e6691e78145" name="変更" comment="">
-      <change afterPath="$PROJECT_DIR$/../message_board_api/prisma/migrations/20240131060732_initial/migration.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../message_board_api/prisma/migrations/migration_lock.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../message_board_api/prisma/schema.prisma" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../message_board_api/util/auth.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../message_board_api/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../message_board_api/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../message_board_api/.idea/message_board_api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../message_board_api/.idea/message_board_api.iml" afterDir="false" />
+    <list default="true" id="ee553024-2e93-4f55-ae9e-2e6691e78145" name="変更" comment="新規登録ができた(フロント)">
       <change beforePath="$PROJECT_DIR$/../message_board_api/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/../message_board_api/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../message_board_api/bin/www" beforeDir="false" afterPath="$PROJECT_DIR$/../message_board_api/bin/www" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../message_board_api/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../message_board_api/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../message_board_api/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../message_board_api/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../message_board_api/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../message_board_api/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../message_board_api/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../message_board_api/routes/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../message_board_api/routes/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/../message_board_api/routes/users.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../message_board_api/util/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/../message_board_api/util/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/request.js" beforeDir="false" afterPath="$PROJECT_DIR$/request.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/login/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,22 +42,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;chap7-3&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/home/s22001/.local/share/JetBrains/Toolbox/apps/WebStorm/ch-0/233.11799.229/plugins/javascript-impl/jsLanguageServicesImpl/external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "chap7-3",
+    "last_opened_file_path": "/home/s22001/WebstormProjects/Node/message_board_api_front/src/app",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_interpreter_path": "node",
+    "nodejs_package_manager_path": "npm",
+    "npm.dev.executor": "Run",
+    "ts.external.directory.path": "/home/s22001/.local/share/JetBrains/Toolbox/apps/WebStorm/ch-0/233.11799.229/plugins/javascript-impl/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/app" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/app/login" />
+      <recent name="$PROJECT_DIR$/src/app/signup" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
@@ -94,10 +98,35 @@
       <workItem from="1706838232861" duration="7915000" />
       <workItem from="1707123144696" duration="4955000" />
       <workItem from="1707174456446" duration="3946000" />
+      <workItem from="1707183780191" duration="8134000" />
     </task>
+    <task id="LOCAL-00001" summary="新規登録ができた(フロント)">
+      <option name="closed" value="true" />
+      <created>1707183805599</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1707183805599</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="新規登録ができた(フロント)" />
+    <option name="LAST_COMMIT_MESSAGE" value="新規登録ができた(フロント)" />
   </component>
 </project>

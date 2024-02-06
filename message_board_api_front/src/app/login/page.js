@@ -2,26 +2,22 @@
 
 import {useState, useEffect} from "react";
 import axios from "axios";
-import {requests} from "../../request";
+import {requests} from "../../../request";
+import {redirect} from "next/navigation";
+import {useRouter} from "next/navigation";
 
-const SignupPage =  () => {
+
+const LoginPage = () => {
     // // ログインフォームの状態管理
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [data, setData] = useState(null);
+    const router = useRouter()
 
-    // useEffect(() => {
-    //     const fetchData = async () =>{
-    //         try {
-    //             const response = await axios.get(requests.SIGNUP);
-    //             const result =  response.data.name// データの指定
-    //             setData(result);
-    //         } catch (error) {
-    //             console.log('Error fetching data:', error);
-    //         }
-    //     };
-    //     // fetchData();
-    // },[]);
+
+    useEffect(() => {
+
+    }, []);
 
     const nameChange = (event) => {
         setUsername(event.target.value)
@@ -32,31 +28,30 @@ const SignupPage =  () => {
         console.log(event.target.value)
     };
 
-    const sig = async () => {
+    const log = async () => {
         try {
-            const response = await axios.post(requests.SIGNUP, {
+            const response = await axios.post(requests.LOGIN, {
                 name: username,
-                password: password,
+                password: password
             });
-            console.log(response.data);
+            console.log(response.data.message);
+            router.push(`http://localhost:3000`)
         } catch (error) {
-            console.error('エラーが発生しました:', error.response ? error.response.data : error.message);
+            console.log('エラー発生!!:', error);
         }
     };
+
+
+
 
     return (
         <div>
             <h1>API Data:</h1>
-            {/*{data ? (*/}
-            {/*    <pre>{JSON.stringify(data)}</pre>*/}
-            {/*) : (*/}
-            {/*    <p>Loading data...</p>*/}
-            {/*)}*/}
             <h1>名前</h1>
             <input type="text" value={username} onChange={(e) => nameChange(e)}/>
             <h1>パスワード</h1>
-            <input type="password" value={password} onChange={passChange}/><br/>
-            <button onClick={sig}>登録</button>
+            <input type="password" value={password} onChange={passChange}/>
+            <button onClick={log}>ログイン</button>
         </div>
     );
 
@@ -80,6 +75,4 @@ const SignupPage =  () => {
     // );
 };
 
-export default SignupPage;
-
-
+export default LoginPage;
