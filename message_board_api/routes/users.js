@@ -15,7 +15,7 @@ router.get("/", (req, res, next) => {
     try {
         res.status(200).json({message: "logged in"});
     } catch (e) {
-        res.status(400).json({message: "unauthenticated"});
+        res.status(401).json({message: "unauthenticated"});
     }
 });
 
@@ -43,10 +43,11 @@ router.get("/error", (req, res, next) => {
 // ログアウト処理
 router.get("/logout", (req, res, next) => {
     req.logout((err) => {
-        if (err) {
-            return next(err);
-        }
-        res.redirect("/users/login")
+        // if (err) {
+        //     return next(err);
+        // }
+        // res.redirect("/users/login")
+        res.json({message: "logout"})
     });
 });
 

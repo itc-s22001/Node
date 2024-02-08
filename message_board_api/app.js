@@ -10,6 +10,7 @@ import passportConfig from "./util/auth.js"
 
 import indexRouter from "./routes/index.js";
 import usersRouter from "./routes/users.js";
+import boardRouter from "./routes/board.js";
 
 
 const app = express();
@@ -36,12 +37,13 @@ app.use(passportConfig(passport));
 
 // cors
 app.use(cors({
-    origin: "http://localhost:3000",
+    origin: "http://localhost:3000", // 許可する 複数の場合は[]で指定する
     credential: true
 }));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/board', boardRouter);
 
 
 export  default app;
