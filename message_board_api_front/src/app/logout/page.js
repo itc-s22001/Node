@@ -7,7 +7,7 @@ import {redirect} from "next/navigation";
 import {useRouter} from "next/navigation";
 
 
-const LoginPage = () => {
+const LogoutPage = () => {
     // // ログインフォームの状態管理
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -75,4 +75,4 @@ const LoginPage = () => {
     // );
 };
 
-export default LoginPage;
+export default LogoutPage;

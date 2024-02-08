@@ -4,15 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ee553024-2e93-4f55-ae9e-2e6691e78145" name="変更" comment="新規登録ができた(フロント)">
+    <list default="true" id="ee553024-2e93-4f55-ae9e-2e6691e78145" name="変更" comment="ログインができた(フロント)">
       <change beforePath="$PROJECT_DIR$/../message_board_api/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/../message_board_api/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../message_board_api/routes/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/../message_board_api/routes/users.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../message_board_api/util/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/../message_board_api/util/auth.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/request.js" beforeDir="false" afterPath="$PROJECT_DIR$/request.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/login/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/login/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/logout/page.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -98,7 +94,7 @@
       <workItem from="1706838232861" duration="7915000" />
       <workItem from="1707123144696" duration="4955000" />
       <workItem from="1707174456446" duration="3946000" />
-      <workItem from="1707183780191" duration="8134000" />
+      <workItem from="1707183780191" duration="12062000" />
     </task>
     <task id="LOCAL-00001" summary="新規登録ができた(フロント)">
       <option name="closed" value="true" />
@@ -108,7 +104,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707183805599</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="ログインができた(フロント)">
+      <option name="closed" value="true" />
+      <created>1707200496154</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1707200496154</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -127,6 +131,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="新規登録ができた(フロント)" />
-    <option name="LAST_COMMIT_MESSAGE" value="新規登録ができた(フロント)" />
+    <MESSAGE value="ログインができた(フロント)" />
+    <option name="LAST_COMMIT_MESSAGE" value="ログインができた(フロント)" />
   </component>
 </project>
